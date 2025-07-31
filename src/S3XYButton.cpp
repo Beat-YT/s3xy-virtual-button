@@ -120,10 +120,10 @@ class IDCB : public BLECharacteristicCallbacks {
       const uint8_t resp[] = {0xC7, 0x00, 0x01};
       notifyBytes(resp, sizeof(resp));
       S3XY_LOG("Commander initialized success");
-    } else if (len == 1 && data[0] == 0xA1) { // Disconnect request
+    } else if (len == 1 && data[0] == 0xA1) {  // Disconnect request
       S3XY_LOG("Unpair -> disconnect");
       g_server->disconnect(0);
-    } else if (len == 4 && data[0] == 0xA4) { // Rename request
+    } else if (len == 4 && data[0] == 0xA4) {  // Rename request
       const uint8_t resp[] = {0xA4, 0x00, data[1], data[2]};
       notifyBytes(resp, sizeof(resp));
       S3XY_LOG("Rename handled");
@@ -218,9 +218,9 @@ void s3xy_send_long() {
 
 void s3xy_send_double() {
   if (!s3xy_ready()) return;
-  s3xy_send_single();
-  delay(100);
-  s3xy_send_single();
+  const uint8_t p[] = {0xC1, 0x02};
+  notifyBytes(p, sizeof(p));
+  delay(5);
 }
 
 void s3xy_set_id(const uint8_t id[10]) {
