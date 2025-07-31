@@ -1,0 +1,6 @@
+# .clang-format
+BasedOnStyle: Google
+IndentWidth: 2
+ColumnLimit: 120
+AllowShortFunctionsOnASingleLine: Empty
+BreakBeforeBraces: Attach
