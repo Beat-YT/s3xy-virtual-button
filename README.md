@@ -3,7 +3,7 @@
 This is a simple ESP32 sketch that turns your dev board into a virtual *S3XY Button* — a BLE accessory that mimics Enhance Auto’s real button (`ENH_BTN`) device.
 
 You can:
-- Pair it with your Tesla S3XY Commander v2
+- Pair it with your Tesla Gen 2 S3XY Commander
 - Emulate single click, long press, or double click actions
 - Add your own automation logic easily in `main.cpp`
 
